@@ -1,2 +1,2 @@
-# nytreact2
-New York Times article scraper with annotation
+# nytreact
+nytimes scraper app built with Node/Express/MongoDB/ReactJS

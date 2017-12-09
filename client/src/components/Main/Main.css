@@ -1,0 +1,33 @@
+h1 {
+	text-align: center;
+}
+
+.wrapper {
+	margin: 40px;
+	border: 1px solid black;
+	border-radius: 5px
+}
+
+.input-header {
+	text-align: center;
+}
+
+.section-header {
+	padding-bottom: 25px;
+	border-bottom: 2px solid black;
+}
+
+.main {
+	text-align: center;
+}
+
+.main-header {
+	font-size: 35px;
+	color: black;
+	text-decoration: underline;
+}
+
+.sub-header {
+	font-size: 20px;
+	color: black;
+}
