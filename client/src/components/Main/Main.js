@@ -77,7 +77,7 @@ class Main extends Component {
     return (
       <div className="App">
        	{console.log(this.state)}
-       	<div class="main">
+       	<div className="main">
 	       	<p className="main-header">New York Times Article Scrubber</p>
 	       	<p className="sub-header">Search for and annotate articles of interest!</p>
        	</div>      	
