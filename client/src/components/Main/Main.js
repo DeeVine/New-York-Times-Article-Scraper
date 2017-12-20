@@ -22,7 +22,7 @@ class Main extends Component {
     	this.loadArticles();
   	}
   	
-  	getArticles = event => {
+  	getArticles = () => {
   		let self = this;
 	    axios({
 	      url:'https://api.nytimes.com/svc/search/v2/articlesearch.json',
