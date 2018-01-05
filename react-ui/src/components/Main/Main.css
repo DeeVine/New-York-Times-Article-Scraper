@@ -6,6 +6,15 @@ button {
 	border-radius: 5px;
 }
 
+.outter {
+  width:100%;
+  text-align: center;
+}
+.inner {
+  display: inline-block;
+  margin: 5px;
+}
+
 .list-group {
 	margin: 0px;
 }

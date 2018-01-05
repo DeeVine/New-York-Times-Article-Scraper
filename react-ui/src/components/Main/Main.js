@@ -10,7 +10,7 @@ import axios from "axios";
 class Main extends Component {
 
 	state = {
-		topic: "food",
+		topic: "Food",
 		begindate: "20171201",
 		enddate:"20171205",
 		articles: [],
@@ -103,17 +103,19 @@ class Main extends Component {
 		                value={this.state.begindate}
 		                onChange={this.handleInputChange}
 		                name="begindate"
-		                placeholder="Start Year (required)"
+		                placeholder="Start Year (yyyymmdd Required)"
 		              />
 		              <h5 className="input-header">End Date:</h5>
 		              <Input
 		                value={this.state.enddate}
 		                onChange={this.handleInputChange}
 		                name="enddate"
-		                placeholder="End Year (required)"
+		                placeholder="End Year (yyyymmdd Required)"
 		              />
-		              <Searchbtn onClick={this.getArticles}>Search Articles</Searchbtn>
-		              <Searchbtn onClick={this.clearArticles}>Clear Results</Searchbtn>
+		              <div className="outter">
+		              	<div className="inner"><Searchbtn onClick={this.getArticles}>Search Articles</Searchbtn></div>
+		              	<div className="inner"><Searchbtn onClick={this.clearArticles}>Clear Results</Searchbtn></div>
+		              </div>           
 	        	</Form>
 		       	</div>         
 		        <div className="wrapper">

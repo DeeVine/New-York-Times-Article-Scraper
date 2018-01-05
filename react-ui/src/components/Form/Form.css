@@ -3,8 +3,13 @@
 }
 
 .submit {
-	color: red;
+	color: white;
+	background-color: #0f16c3;
 	float: center;
+}
+
+.submit:hover {
+	background-color: #5259f5;
 }
 
 .submit-button-container {
