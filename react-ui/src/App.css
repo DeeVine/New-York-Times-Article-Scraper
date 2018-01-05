@@ -1,5 +1,9 @@
+html, body {
+  height: 100%;
+  overflow: auto;
+}
+
 body {
-  height: 100vh;
   background-image: url('../public/nyt.jpeg');
   background-repeat: no-repeat;
   background-size: cover;

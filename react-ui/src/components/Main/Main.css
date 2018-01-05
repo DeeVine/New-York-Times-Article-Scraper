@@ -1,4 +1,4 @@
-h1 {
+h1, .main-header, .sub-header {
 	text-align: center;
 }
 
@@ -23,13 +23,15 @@ button {
 	margin: 0px;
 }
 
+.section-container {
+	margin-bottom: 10px;
+}
+
 .wrapper {
 	border: 1px solid black;
 	border-radius: 15px;
 	overflow: hidden;
 	background-color: white;
-	margin-top: 1%;
-	margin-bottom: 1%;
 }
 
 .input-header {
@@ -47,10 +49,6 @@ button {
 	font-size: 20px;
 }
 
-.main {
-	text-align: center;
-}
-
 .main-header {
 	font-size: 35px;
 	color: black;
@@ -59,8 +57,8 @@ button {
 
 .main-container {
 	background-color: white;
-	padding: 1px 8px 1px 8px;
-	border-radius: 3%;
+	padding: 8px;
+	border-radius: 2%;
 	margin: 2% 10% 2% 10%;
 }
 

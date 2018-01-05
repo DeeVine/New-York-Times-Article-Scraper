@@ -86,64 +86,69 @@ class Main extends Component {
 	       	<div className="main">
 		       	<p className="main-header">New York Times Article Scraper</p>
 		       	<p className="sub-header">Search for and save articles of interest!</p>
+		       	<div className="main-container">
+		       		<div className='section-container'>
+			       		<div className="wrapper">
+				       		<p className="section-header">Search Parameters</p>
+				       		<Form className='form-section'>
+				       			<h5 className="input-header">Topic:</h5>
+					        	<Input
+					                value={this.state.topic}
+					                onChange={this.handleInputChange}
+					                name="topic"
+					                placeholder="Topic (required)"
+					             />
+					             <h5 className="input-header">Start Date:</h5>
+					             <Input
+					                value={this.state.begindate}
+					                onChange={this.handleInputChange}
+					                name="begindate"
+					                placeholder="Start Year (yyyymmdd Required)"
+					              />
+					              <h5 className="input-header">End Date:</h5>
+					              <Input
+					                value={this.state.enddate}
+					                onChange={this.handleInputChange}
+					                name="enddate"
+					                placeholder="End Year (yyyymmdd Required)"
+					              />
+					              <div className="outter">
+					              	<div className="inner"><Searchbtn onClick={this.getArticles}>Search Articles</Searchbtn></div>
+					              	<div className="inner"><Searchbtn onClick={this.clearArticles}>Clear Results</Searchbtn></div>
+					              </div>           
+				        	</Form>
+				       	</div>   
+			       	</div>    
+			       	<div className="section-container">  
+				        <div className="wrapper">
+				        	<p className="section-header">Search Results</p>
+					        <Searched>
+					   			{this.state.articles ? 
+					   				this.state.articles.slice(0,5).map((article,i) =>  (
+					       			<Searcheditems key={i}>
+					       				<span><a target="blank" href={article.web_url}>{article.headline.main} </a></span>
+					       				<Savebtn value={article.headline.main} onClick={() => this.saveArticle(article.headline.main, article.web_url)}/>
+					       			</Searcheditems>
+					   			))
+					   			: null }	
+					        </Searched>
+				        </div>
+			        </div>
+			        <div className="wrapper">
+			        	<p className="section-header">Saved Articles</p>
+				       	<Saved>
+				       		{this.state.savedarticles.map((article,i) =>  (
+				       			<Saveditems key={i}>
+				       				<span><a target="blank" href={article.url}>{article.headline}</a> &nbsp;&nbsp;{article.date}</span>
+				       
+				       				<Delete value={article.headline} onClick={() => this.deleteArticle(article._id)}/>
+				       			</Saveditems>
+				   			))}	
+				       	</Saved>
+			       	</div>
+		       	</div>    
 	       	</div>
-	       	<div className="main-container">
-	       		<div className="wrapper">
-	       		<p className="section-header">Search Parameters</p>
-	       		<Form className='form-section'>
-	       			<h5 className="input-header">Topic:</h5>
-		        	<Input
-		                value={this.state.topic}
-		                onChange={this.handleInputChange}
-		                name="topic"
-		                placeholder="Topic (required)"
-		             />
-		             <h5 className="input-header">Start Date:</h5>
-		             <Input
-		                value={this.state.begindate}
-		                onChange={this.handleInputChange}
-		                name="begindate"
-		                placeholder="Start Year (yyyymmdd Required)"
-		              />
-		              <h5 className="input-header">End Date:</h5>
-		              <Input
-		                value={this.state.enddate}
-		                onChange={this.handleInputChange}
-		                name="enddate"
-		                placeholder="End Year (yyyymmdd Required)"
-		              />
-		              <div className="outter">
-		              	<div className="inner"><Searchbtn onClick={this.getArticles}>Search Articles</Searchbtn></div>
-		              	<div className="inner"><Searchbtn onClick={this.clearArticles}>Clear Results</Searchbtn></div>
-		              </div>           
-	        	</Form>
-		       	</div>         
-		        <div className="wrapper">
-		        	<p className="section-header">Search Results</p>
-			        <Searched>
-			   			{this.state.articles ? 
-			   				this.state.articles.map((article,i) =>  (
-			       			<Searcheditems key={i}>
-			       				<span><a target="blank" href={article.web_url}>{article.headline.main} </a></span>
-			       				<Savebtn value={article.headline.main} onClick={() => this.saveArticle(article.headline.main, article.web_url)}/>
-			       			</Searcheditems>
-			   			))
-			   			: null }	
-			        </Searched>
-		        </div>
-		        <div className="wrapper">
-		        	<p className="section-header">Saved Articles</p>
-			       	<Saved>
-			       		{this.state.savedarticles.map((article,i) =>  (
-			       			<Saveditems key={i}>
-			       				<span><a target="blank" href={article.url}>{article.headline}</a> &nbsp;&nbsp;{article.date}</span>
-			       
-			       				<Delete value={article.headline} onClick={() => this.deleteArticle(article._id)}/>
-			       			</Saveditems>
-			   			))}	
-			       	</Saved>
-		       	</div>
-	       	</div>      	    	
+	       	  	    	
       	</div>
     );
   }
