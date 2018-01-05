@@ -1,6 +1,8 @@
 # nytreact
 nytimes scraper app built with Node/Express/MongoDB/ReactJS
 
+Live app: https://nyt-react-scraperapp.herokuapp.com/
+
 * Updates to make:
  * input validation on form
  * add animations/transitions
