@@ -22,6 +22,12 @@ class Main extends Component {
     	this.loadArticles();
   	}
   	
+  	clearArticles = () => {
+  		this.setState({
+  			articles: ''
+  		})
+  	};
+
   	getArticles = () => {
   		let self = this;
 	    axios({
@@ -83,23 +89,23 @@ class Main extends Component {
 	       	</div>
 	       	<div className="main-container">
 	       		<div className="wrapper">
-	       		<p className="section-header">Search</p>
+	       		<p className="section-header">Search Parameters</p>
 	       		<Form className='form-section'>
-	       			<h5 className="input-header">Topic</h5>
+	       			<h5 className="input-header">Topic:</h5>
 		        	<Input
 		                value={this.state.topic}
 		                onChange={this.handleInputChange}
 		                name="topic"
 		                placeholder="Topic (required)"
 		             />
-		             <h5 className="input-header">Start Date</h5>
+		             <h5 className="input-header">Start Date:</h5>
 		             <Input
 		                value={this.state.begindate}
 		                onChange={this.handleInputChange}
 		                name="begindate"
 		                placeholder="Start Year (required)"
 		              />
-		              <h5 className="input-header">End Date</h5>
+		              <h5 className="input-header">End Date:</h5>
 		              <Input
 		                value={this.state.enddate}
 		                onChange={this.handleInputChange}
@@ -107,17 +113,20 @@ class Main extends Component {
 		                placeholder="End Year (required)"
 		              />
 		              <Searchbtn onClick={this.getArticles}>Search Articles</Searchbtn>
+		              <Searchbtn onClick={this.clearArticles}>Clear Results</Searchbtn>
 	        	</Form>
 		       	</div>         
 		        <div className="wrapper">
-		        	<p className="section-header">Results</p>
+		        	<p className="section-header">Search Results</p>
 			        <Searched>
-			   			{this.state.articles.map((article,i) =>  (
+			   			{this.state.articles ? 
+			   				this.state.articles.map((article,i) =>  (
 			       			<Searcheditems key={i}>
-			       				<span>{article.headline.main}</span>
+			       				<span><a target="blank" href={article.web_url}>{article.headline.main} </a></span>
 			       				<Savebtn value={article.headline.main} onClick={() => this.saveArticle(article.headline.main, article.web_url)}/>
 			       			</Searcheditems>
-			   			))}	
+			   			))
+			   			: null }	
 			        </Searched>
 		        </div>
 		        <div className="wrapper">
@@ -125,8 +134,8 @@ class Main extends Component {
 			       	<Saved>
 			       		{this.state.savedarticles.map((article,i) =>  (
 			       			<Saveditems key={i}>
-			       				<span>{article.headline}</span>
-			       				<span>{article.date}</span>
+			       				<span><a target="blank" href={article.url}>{article.headline}</a> &nbsp;&nbsp;{article.date}</span>
+			       
 			       				<Delete value={article.headline} onClick={() => this.deleteArticle(article._id)}/>
 			       			</Saveditems>
 			   			))}	

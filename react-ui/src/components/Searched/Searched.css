@@ -1,3 +1,7 @@
 .inline {
 	display:inline-block;
 }
+
+.searched-items a{ 
+	color: #0002ce;
+}

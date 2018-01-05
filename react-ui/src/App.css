@@ -2,7 +2,7 @@ body {
   background-image: url('../public/nyt.jpeg');
 }
 
-.App {
+.section-header {
   text-align: center;
 }
 
@@ -20,10 +20,6 @@ body {
 
 .App-intro {
   font-size: large;
-}
-
-.App a {
-  color: #f60;
 }
 
 @keyframes App-logo-spin {

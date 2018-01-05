@@ -3,7 +3,7 @@ import "./Searched.css";
 
 export const Searched = ({children}) => (
   <div className="list-overflow-container">
-      <ul className="list-group">
+      <ul className="searched-items list-group">
         {children}
       </ul>
     </div>
