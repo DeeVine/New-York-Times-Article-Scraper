@@ -1,5 +1,5 @@
 # nytreact
-nytimes scraper app built with Node/Express/MongoDB/ReactJS
+Web application that queries articles from New York Times API. Users can search articles based on topic and date ranges, and save articles they are interested in.
 
 Live app: https://nyt-react-scraperapp.herokuapp.com/
 
@@ -8,9 +8,7 @@ Live app: https://nyt-react-scraperapp.herokuapp.com/
 - Express
 - MongoDB
 - Axios
-
-
-
+- New York Times API
 
 * Updates to make:
  * input validation on form
