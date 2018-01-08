@@ -10,9 +10,4 @@ Live app: https://nyt-react-scraperapp.herokuapp.com/
 - Axios
 - New York Times API
 
-* Updates to make:
- * input validation on form
- * add animations/transitions
- * regex date to only retreive mmmm/dd/yy for saved articles
- * make date submission optional
- * add number of results option
+![website img](https://github.com/DeeVine/New-York-Times-Article-Scraper/blob/master/images/NYT.png)
