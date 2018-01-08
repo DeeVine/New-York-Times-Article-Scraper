@@ -3,6 +3,15 @@ nytimes scraper app built with Node/Express/MongoDB/ReactJS
 
 Live app: https://nyt-react-scraperapp.herokuapp.com/
 
+## Built With
+- React
+- Express
+- MongoDB
+- Axios
+
+
+
+
 * Updates to make:
  * input validation on form
  * add animations/transitions
